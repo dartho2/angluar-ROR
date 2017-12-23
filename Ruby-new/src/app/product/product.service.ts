@@ -13,4 +13,7 @@ export class ProductService {
       return this.http.get(this.productsUrl)
         .map((response: Response) => <Product[]>response.json())
   }
+  getProduct(id: number){
+  return this.http.get(this.productsUrl + "/" + id + '.json');
+  }
 }

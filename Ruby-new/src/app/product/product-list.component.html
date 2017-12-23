@@ -1,4 +1,5 @@
 <div class="post-list" *ngFor="let product of products">
+  <a (click)="goToShow(product)">
   <div>
     {{product.name}}
   </div>
@@ -6,4 +7,5 @@
   <p>
     <small>Last Updated:</small> {{ product.updated_at }}
   </p>
+  </a>
 </div>

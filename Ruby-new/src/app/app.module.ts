@@ -6,6 +6,7 @@ import { HttpModule} from "@angular/http";
 
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product/product-list.component';
+import { ProductShowComponent } from './product/product-show.component';
 import { ProductService} from "./product/product.service";
 import { HomepageComponent } from './homepage/homepage.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,7 @@ import { AppRoutingModule } from './app-routing.module';
   declarations: [
     AppComponent,
     ProductListComponent,
+    ProductShowComponent,
     HomepageComponent
   ],
   imports: [
