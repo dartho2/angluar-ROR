@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs/Rx';
 import {Product} from './product';
+
 import {ProductService} from './product.service';
 import {Router} from "@angular/router";
 
@@ -30,6 +31,7 @@ export class ProductListComponent implements OnInit {
     let productLink = ['/products', product.id];
     this.router.navigate(productLink);
   }
+
 }
 
 
