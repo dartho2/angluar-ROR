@@ -1,8 +1,12 @@
+
+<div *ngIf="product">
 <div class="jumbotron">
   <h1 class="display-3">Show Product</h1>
   <p class="lead"></p>
   <hr class="my-4">
   <p></p>
 {{product.name}}
+  <button type="button" (click) = "delete(product)" class="btn btn-warning">DEL</button>
+  <button type="button" class="btn btn-warning">UPD</button>
 </div>
-
+</div>

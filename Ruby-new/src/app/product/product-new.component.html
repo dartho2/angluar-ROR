@@ -5,30 +5,31 @@
   <p></p>
 
 </div>
+<div [hidden]="!submitted" class="alert alert-success" role="alert">
+  Correct create Product <a class="alert-link" routerLink="/products">View all products</a>
+</div>
 <div class="row">
   <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3">
-    <form (ngSubmit)="createProduct(product)" #productForm='ngForm'>
+    <form (ngSubmit)="createProduct(product); postForm.reset()" #productForm='ngForm'>
       <div class="form-group">
         <label for="name">
           <h3>Name</h3>
         </label>
-        <input type="text" class="form-control" id="name"
-               required name="name"
-               placeholder="Name product"
-               #name='ngModel'
-               [(ngModel)]='product.name'
-        ></div>
+        <input type="text" class="form-control" id="name" required name="name" placeholder="Name product"
+               #name='ngModel' [(ngModel)]='product.name'>
+        <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+          Blank or incorect
+        </div>
+      </div>
       <div class="form-group">
         <label for="name">
           <h3>Price</h3>
         </label>
-        <input type="text" class="form-control" id="price"
-               required
-               name="price"
-               placeholder="Price product"
-               #price='ngModel'
-               [(ngModel)]='product.price'
-        >
+        <input type="text" class="form-control" id="price" required name="price" placeholder="Price product"
+               #price='ngModel' [(ngModel)]='product.price'>
+        <div [hidden]="price.valid || price.pristine" class="alert alert-danger">
+          Blank or incorect
+        </div>
       </div>
       <button type="submit" class="btn btn-primary">ADD</button>
     </form>

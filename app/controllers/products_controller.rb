@@ -19,6 +19,21 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    @product = Product.find(params[:id])
+    @product.update(deleted: true)
+  end
+
+  def update
+    @product_destroy = Product.find(params[:id])
+    @product = Product.new(update_params(params[:id]))
+
+    if @product.save && @product_destroy.update(deleted: true)
+   render json: @product
+    else
+
+    end
+  end
   private
   def product_params
     params.require(:product).permit(:name, :id, :parent_id, :price, :category_id,)
