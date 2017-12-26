@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20171223142752) do
     t.index ["product_id"], name: "index_product_orders_on_product_id"
   end
 
-  create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "product", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.bigint "category_id"
     t.string "name"
     t.integer "price"
@@ -60,5 +60,5 @@ ActiveRecord::Schema.define(version: 20171223142752) do
 
   add_foreign_key "orders", "customers"
   add_foreign_key "product_orders", "orders"
-  add_foreign_key "product_orders", "products"
+  add_foreign_key "product_orders", "product"
 end

@@ -28,7 +28,7 @@ export class ProductListComponent implements OnInit {
   }
 
   goToShow(product: Product): void {
-    let productLink = ['/products', product.id];
+    let productLink = ['/product', product.id];
     this.router.navigate(productLink);
   }
 

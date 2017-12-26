@@ -1,29 +1,18 @@
-<div class="product-list" *ngFor="let product of products">
-
-  <div>
-  <table class="table">
-    <thead>
-    <tr>
-
-      <th>ID</th>
-      <th>Product</th>
-      <th>Price</th>
-      <th>Action</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>{{ product.id }}</td>
-      <td>{{ product.name }}</td>
-      <td>{{ product.price }}</td>
-      <td><a (click)="goToShow(product)"><button type="button" class="btn btn-info">Show</button></a>
-
-
-
-
-
+<table class="table">
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tr *ngFor="let product of products">
+    <td>{{ product.id }}</td>
+    <td>{{ product.name }}</td>
+    <td>{{ product.price }}</td>
+  <td>
+    <a (click)="goToShow(product)"><button type="button" class="btn btn-info">Show</button></a>
       </td>
     </tr>
-    </tbody>
-  </table>
-</div>
+</table>

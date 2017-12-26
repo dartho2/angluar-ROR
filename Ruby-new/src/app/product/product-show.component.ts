@@ -35,18 +35,16 @@ export class ProductShowComponent implements OnInit {
       this.productService.getProduct(+params['id']));
     productRequest.subscribe(response => this.product = response.json());
   }
-  update(product: Product) {
-    this.editBtnClicked = true;
-    this.productService.updateProduct(this.product.id)
-      .subscribe(data => {
-      return true
-    }, error => {
-        console.log('Error editing');
-        return Observable.throw(error);
-      })
-
-
-  }
+  // update(product: Product) {
+  //   this.editBtnClicked = true;
+  //   this.productService.updateProduct(this.product.id)
+  //     .subscribe(data => {
+  //     return true
+  //   }, error => {
+  //       console.log('Error editing');
+  //       return Observable.throw(error);
+  //     })
+  // }
   delete(product: Product) {
     this.productService.deleteProduct(this.product.id)
       .subscribe(data => {return true },
